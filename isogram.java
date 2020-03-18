@@ -14,7 +14,14 @@ public class isogram {
 	}
 	
 	public static boolean  isIsogram(String str) {
-		return str.length() == str.toLowerCase().chars().distinct().count();
+        str = str.toUpperCase();
+        boolean isogram = true;
+        for(int i=0; i<str.length(); i++) {
+        	for(int j=i+1; j<str.length()-i;j++) {
+        		if(str.charAt(i) == str.charAt(j)) isogram = false;
+        	}
+        }
+		return isogram;
     } 
 
 }
